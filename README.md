@@ -7,8 +7,8 @@ Les étapes 1 et 2 ont été réalisées.
 ### Composants
 Trois ont été créés.
 
-Top-bar : pour le titre et les choix « calculateur » ou « liste des aliments »
-Aliment-calculator: pour la page correspondante au choix « calculateur »
+Top-bar : pour le titre et les choix « calculateur » ou « liste des aliments ». 
+Aliment-calculator: pour la page correspondante au choix « calculateur ». 
 Aliment-list : pour la page correspondante au choix « liste des aliments »
 
 ### app.component.html et app.module.ts :

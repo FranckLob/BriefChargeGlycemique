@@ -1,0 +1,48 @@
+<form [formGroup]="portionForm"  (ngSubmit)="createPortion(portionForm.value)">
+
+    <h3>Définition des portions</h3>
+
+    <div id="label1">
+        <label>
+          Aliment
+        </label>    
+        <select id="select" formControlName="alimentName">
+            <option [ngValue]="aliment" *ngFor="let aliment of alimentList">{{aliment.name}}</option>
+        </select>
+    </div>
+    
+    <div id="label2">
+        <label for="weight">
+          Portion (g)
+        </label>   
+        <input id="weight" type="number" formControlName="weight">
+    </div>
+    
+    <button id="button" type="submit">Ajouter</button>
+  
+</form>
+
+<section>
+    <h3>Charge totale : <span id="charge"></span></h3>
+    <h3>Liste des portions ajoutées</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Nom de l'aliment</th>
+            <th>Index glycémique</th>
+            <th>Proportion de glucides (g)</th>
+            <th>Charge</th>
+            <th>Suppression</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let portion of portionList; index as portionId">
+        <tr>
+            <td>{{ portion.alimentName.name }}</td>
+            <td>{{ portion.alimentName.ig }}</td>
+            <td>{{ portion.weight }}</td>
+            <td>{{ (portion.alimentName.ig * portion.weight / 100).toFixed(2) }}</td>
+            <td><button (click)="deletePortion(portion,portionId)">Supprimer</button></td>
+        </tr>
+    </tbody>
+</table>
+</section>

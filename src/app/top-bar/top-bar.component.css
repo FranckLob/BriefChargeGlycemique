@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+}
+
+.haki {
+    height:100px;
+    width: auto;
+    background-color: darkkhaki;
+    line-height:100px; /* centrage vertical */
+}
+
+.yellow {
+    height: 100px;
+    width: auto;
+    background-color: yellow;
+    display : flex;
+}
+
+#choixc,#choixl {   
+    margin: auto;
+}   

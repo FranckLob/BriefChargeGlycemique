@@ -30,9 +30,15 @@ charge;
   }
   
   createPortion(portion){
+    //on écrit seulement si tous les champs sont correctement renseignés
+    if (portion.alimentName.name != null && portion.weight >0) {
     this.portionList.push(portion);
     this.charge=this.charge+(portion.alimentName.ig * portion.weight / 100);
     document.getElementById("charge").innerHTML=this.charge.toFixed(2);
+    }
+    else {
+      window.alert("Les données saisies sont incomplètes")
+    }
   }
 
   deletePortion(portion,portionId) {

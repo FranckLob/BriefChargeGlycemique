@@ -24,7 +24,13 @@ export class AlimentListComponent implements OnInit {
 }
 
 createAliment(aliment) {
+  //on écrit seulement si tous les champs sont correctement renseignés
+  if (aliment.name != "" && aliment.ig > 0 && aliment.carbs > 0) {
   this.alimentList.push(aliment);
+  }
+  else {
+    window.alert("Les données saisies sont incomplètes")
+  }
 }
 
 deleteAliment(alimentId) {
